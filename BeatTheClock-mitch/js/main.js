@@ -108,9 +108,8 @@ let spriteDeets = {
   frameWidth: 156,
   curCount: 0,
   curPosition: 0,
-  maxCount: 5
-};
-
+  maxCount: 5,
+}
 function countdown() {
   // Check Timer has not run out
   if (time > 0) {
@@ -118,23 +117,25 @@ function countdown() {
     time--;
 
     spriteDeets.curCount++;
-    if (spriteDeets.curCount >= spriteDeets.maxCount) {
+    if (spriteDeets.curCount >= spriteDeets.maxCount)
+    {
       spriteDeets.curCount = 0; //reset back to the beginning
     }
-
-    let newPostion = parseInt(
-      spriteDeets.frameWidth * spriteDeets.curCount * -1
-    );
+    
+    let newPostion = parseInt(spriteDeets.frameWidth * spriteDeets.curCount * -1);
     spriteDeets.curPosition = newPostion;
     console.log(newPostion, spriteDeets.curPosition);
 
-    let tWheel = document.querySelector(".tWheel");
-    tWheel.style.backgroundPosition = spriteDeets.curPosition + "px 0px";
+    let tWheel = document.querySelector('.tWheel');
+    tWheel.style.backgroundPosition = spriteDeets.curPosition +'px 0px';
 
     console.log(tWheel);
+
+
   } else if (time === 0) {
     // Game is over
     isPlaying = false;
+    setCount = 0;
   }
   // Show time
   timeDisplay.innerHTML = time;
